@@ -28,6 +28,10 @@ class CurrenciesController < ApplicationController
     @first_currency = params.fetch("first_currency")
     @second_currency = params.fetch("second_currency")
 
+    @raw_data = open("https://api.exchangerate.host/convert?from=USD&to=EUR").read
+    @parsed_data = JSON.parse(@raw_data)
+    @x_rate = @parsed_data.fetch("result")
+
     render({ :template => "currency_templates/step_three.html.erb"})
   end
 
