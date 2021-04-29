@@ -28,7 +28,7 @@ class CurrenciesController < ApplicationController
     @first_currency = params.fetch("first_currency")
     @second_currency = params.fetch("second_currency")
 
-    @raw_data = open("https://api.exchangerate.host/convert?from=USD&to=EUR").read
+    @raw_data = open("https://api.exchangerate.host/convert?from=#{@first_currency}&to=#{@second_currency}").read
     @parsed_data = JSON.parse(@raw_data)
     @x_rate = @parsed_data.fetch("result")
 
