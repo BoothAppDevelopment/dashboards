@@ -5,7 +5,7 @@
 <p>
   <ul>
     <% @array_currencies.each do |second_currency| %>
-      <li> Convert 1 <%= @first_currency%> to <%= second_currency %>... </li>
+      <li> <a href = "/forex/<%= @first_currency%>/<%= second_currency%>"> Convert 1 <%= @first_currency%> to <%= second_currency %>... </li>
 
     <% end %>
   

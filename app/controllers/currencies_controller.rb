@@ -24,4 +24,11 @@ class CurrenciesController < ApplicationController
     render({ :template => "currency_templates/step_two.html.erb"})
   end
 
+  def exchange_rate
+    @first_currency = params.fetch("first_currency")
+    @second_currency = params.fetch("second_currency")
+
+    render({ :template => "currency_templates/step_three.html.erb"})
+  end
+
 end
