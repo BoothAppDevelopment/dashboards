@@ -1,14 +1,16 @@
 <h1> Currency pairs </h1>
 
-<p> Go <a href= "/"> back </a> </p>
+<p> Go <a href= "/"> back </a>. </p>
+
+<%=# @symbols_hash %>
 
 <p>
   <ul>
-    <%# @array_currencies.each do |currency|  %>
+    <% @array_currencies.each do |currency|  %>
     <li>
-      <a href="/forex/#{currency}"> Convert 1 currency to... </a>
+      <a href="/forex/AED"> Convert 1 AED to... </a>
     </li>
-    <%# end %>
+    <% end %>
 
 
   </ul>
